@@ -1,0 +1,131 @@
+/* Design tokens ported from the prototype (Cairo, RTL, --accent/--gold). */
+:root {
+  --white: #ffffff;
+  --off-white: #f7f6f3;
+  --cream: #f0ede6;
+  --ink: #0f1419;
+  --ink-light: #64748b;
+  --ink-muted: #94a3b8;
+  --accent: #1c5e3e;
+  --accent-light: #24764e;
+  --accent-dim: rgba(28, 94, 62, 0.08);
+  --gold: #b8952a;
+  --border: rgba(15, 20, 25, 0.08);
+  --green: #16a34a;
+  --green-dim: rgba(22, 163, 74, 0.1);
+  --red: #dc2626;
+  --red-dim: rgba(220, 38, 38, 0.08);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: "Cairo", system-ui, sans-serif;
+}
+
+body {
+  background: var(--off-white);
+  color: var(--ink);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+}
+
+.brand {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  margin-bottom: 0.5rem;
+}
+.brand-name {
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: var(--ink);
+}
+.brand-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+.sub {
+  color: var(--ink-light);
+  font-size: 0.95rem;
+  margin-bottom: 2.5rem;
+}
+
+.card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.5rem;
+}
+.card-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--ink-muted);
+  margin-bottom: 1rem;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.3rem 0.8rem;
+  border-radius: 2rem;
+}
+.pill.ok {
+  background: var(--green-dim);
+  color: var(--green);
+}
+.pill.bad {
+  background: var(--red-dim);
+  color: var(--red);
+}
+
+.check {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.85rem;
+}
+.check:last-child {
+  border-bottom: none;
+}
+.check .name {
+  color: var(--ink-light);
+}
+.check .ok {
+  color: var(--green);
+  font-weight: 700;
+}
+.check .bad {
+  color: var(--red);
+  font-weight: 700;
+}
+
+.hint {
+  margin-top: 1.25rem;
+  font-size: 0.78rem;
+  color: var(--ink-muted);
+  line-height: 1.6;
+}
+.accent {
+  color: var(--accent);
+  font-weight: 700;
+}
