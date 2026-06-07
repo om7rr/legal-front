@@ -20,9 +20,18 @@ The home page calls `${NEXT_PUBLIC_API_BASE_URL}/health/ready` to prove the fron
 `npm run dev` · `npm run build` · `npm run start` · `npm run lint`
 
 ## Structure
-- `app/` — App Router (`layout.tsx` sets RTL + Cairo, `page.tsx` is the status demo)
+- `app/login` — Nafath login: national id → match number → (test) simulate approval → poll → store JWT
+- `app/cases` — authenticated cases list + create (redirects to `/login` without a token)
+- `app/page.tsx` — redirects to `/cases`
+- `lib/api.ts` — typed legal-back client · `lib/auth.ts` — token storage
 - `app/globals.css` — design tokens + base styles
 
+## Try it (needs legal-db + legal-back running)
+```bash
+npm run dev            # http://localhost:3000 → /login
+# sign in with a seeded national id: 1111111111 (Firm A admin), then "simulate approval"
+```
+
 ## Next
-Build the real screens (cases, sessions, clients, invoices) against the legal-back API, using a
-shared component library. The prototype's `mobile.html` is the spec for mobile daily-companion flows.
+Real screens (sessions, clients, invoices) against the legal-back API; a shared component library;
+replace the test "simulate approval" with the real Nafath app step. `mobile.html` specs the mobile flows.
