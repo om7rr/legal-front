@@ -102,7 +102,6 @@ export default function LoginPage() {
           <>
             <div className="card-title">افتح تطبيق نفاذ واختر الرقم</div>
             <div className="nafath-number">{tx.number}</div>
-            <p className="hint">{tx.message}</p>
             <button className="btn" onClick={simulateApproval} disabled={busy}>
               محاكاة الموافقة (بيئة الاختبار)
             </button>
